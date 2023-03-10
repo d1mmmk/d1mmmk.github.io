@@ -49,7 +49,7 @@ export default class About extends Component<AboutProps, { chartData: any[] } > 
                 <p>This is React application example</p>
 
                 {/* <h2>Sources</h2> */}
-                <p>You can explore the source code of this application on <a href={this.props.githablink}>Github</a></p>
+                <p>You can explore the source code of this application on <a href={this.props.githablink} target="_blank">Github</a></p>
 
                 <h2>What can you fint there?</h2>
                 <ul>
