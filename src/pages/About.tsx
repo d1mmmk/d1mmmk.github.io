@@ -51,7 +51,7 @@ export default class About extends Component<AboutProps, { chartData: any[] } > 
                 {/* <h2>Sources</h2> */}
                 <p>You can explore the source code of this application on <a href={this.props.githablink} target="_blank">Github</a></p>
 
-                <h2>What can you fint there?</h2>
+                <h2>What can you find there?</h2>
                 <ul>
                     <li>Css variables and @media querys, sass nesting</li>
                     <li>Grid and flex markup</li>
