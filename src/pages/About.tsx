@@ -1,5 +1,6 @@
 import { Component, Fragment, ReactNode } from "react";
 import { Chart } from "components";
+import ReactGA from 'react-ga';
 import { CSVFileReader, TSVFileReader } from "services";
 
 interface AboutProps {
@@ -21,6 +22,13 @@ export default class About extends Component<AboutProps, { chartData: any[] } > 
 
     public componentDidMount(): void {
         this.loadChartData();
+    }
+
+    /**
+     * gaEventTracker
+     */
+    public gaEventTracker(label: string): void {
+        ReactGA.event({ category: 'clicks', action: 'btnclick', label });
     }
 
     private loadChartData() {
@@ -49,7 +57,7 @@ export default class About extends Component<AboutProps, { chartData: any[] } > 
                 <p>This is React application example</p>
 
                 {/* <h2>Sources</h2> */}
-                <p>You can explore the source code of this application on <a href={this.props.githablink} target="_blank">Github</a></p>
+                <p>You can explore the source code of this application on <a onClick={() =>this.gaEventTracker('githablink')} href={this.props.githablink} target="_blank">Github</a></p>
 
                 <h2>What can you find there?</h2>
                 <ul>

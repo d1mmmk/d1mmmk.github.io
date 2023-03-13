@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import ReactGA from 'react-ga';
 import { Route, Routes, useLocation } from "react-router-dom";
 import loadable from '@loadable/component';
 
@@ -8,6 +9,11 @@ import { AppFooter, AppHeader } from 'common';
 import Main from 'common/AppMain';
 import { APP_PARAMS } from 'parameters';
 import useMyName from 'hooks/useMyName';
+
+
+const TRACKING_ID = "UA-5743566-3"; // OUR_TRACKING_ID
+
+ReactGA.initialize(TRACKING_ID);
 
 const Home = loadable(() => import('pages/Home'));
 const Contacts = loadable(() => import('pages/Contacts'));
@@ -39,7 +45,7 @@ function App() {
   const myName = useMyName();
 
   React.useEffect(() => {
-    // console.log(location);
+    ReactGA.pageview(location.pathname + location.search);
   }, [location]);
 
   return (

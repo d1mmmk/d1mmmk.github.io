@@ -15,7 +15,7 @@ export default function useMyName() {
             const json = await request.getJson();
             return json;
         }
-        const result = fetchData()
+        fetchData()
             .then((data: jsonData) => {
                 const my_name_is = data.my_name_is || '';
                 setMyname(my_name_is);

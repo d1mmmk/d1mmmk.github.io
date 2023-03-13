@@ -1,4 +1,5 @@
 import { Component, FormEvent, ReactNode } from "react";
+import ReactGA from 'react-ga';
 
 interface ContactsPageProps {
     name: string;
@@ -20,19 +21,36 @@ export default class ContactsPage extends Component<ContactsPageProps> {
         if ( data.name === this.name ) alert('you goddamn right!');
     }
 
+    /**
+     * gaEventTracker
+     */
+    public gaEventTracker(label: string): void {
+        ReactGA.event({ category: 'clicks', action: 'btnclick', label });
+    }
+
     render(): ReactNode {
         return (
             <div className="app_page app_page-contacts">
             <h1>Contacts</h1>
             <dl className="con">
                 <dt>Email</dt>
-                <dd><a href="mailto:d1mmmk@gmail.com?subject=You are rockstar!">{this.props.name}@gmail.com</a></dd>
+                <dd><a
+                    onClick={() => this.gaEventTracker('mailto')}
+                    href="mailto:d1mmmk@gmail.com?subject=You are rockstar!"
+                >{this.props.name}@gmail.com</a></dd>
                 <dt>HH.ru</dt>
                 <dd><a
                     className="crop w-max200 d-ib"
-                    href="https://hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46" target="_blank">hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46</a></dd>
+                    onClick={() => this.gaEventTracker('hh')}
+                    href="https://hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46"
+                    target="_blank"
+                >hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46</a></dd>
                 <dt>GitHub</dt>
-                <dd><a href={"https://github.com/" + this.props.name} target="_blank">github.com/{this.props.name}</a></dd>
+                <dd><a
+                    onClick={() => this.gaEventTracker('github')}
+                    href={"https://github.com/" + this.props.name}
+                    target="_blank"
+                >github.com/{this.props.name}</a></dd>
             </dl>
 
             {/* <form action="" ref={this.formRef} onSubmit={this.handleSubmit}>
