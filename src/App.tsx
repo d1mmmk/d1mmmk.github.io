@@ -19,7 +19,7 @@ const Home = loadable(() => import('pages/Home'));
 const Contacts = loadable(() => import('pages/Contacts'));
 const About = loadable(() => import('pages/About'));
 
-const navigationItems: NavigationItem[] = [
+export const navigationItems: NavigationItem[] = [
   {
     order: 10,
     path: '/',

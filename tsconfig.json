@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-      "target": "esnext",
-      "module": "esnext",
+      "target": "ESNext",
+      "module": "ESNext",
       "moduleResolution": "node",
+      "lib": ["DOM","DOM.Iterable", "ESNext"],
       "noImplicitAny": true,
       "removeComments": true,
       "preserveConstEnums": true,
@@ -13,6 +14,7 @@
       "sourceMap": true,
       "types": [
         "node",
+        "cypress"
       ],
       "baseUrl": "src",
     },
