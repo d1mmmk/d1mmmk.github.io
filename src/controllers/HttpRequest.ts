@@ -1,6 +1,7 @@
 
 export default class HttpRequest<T> {
-    readonly controller: AbortController = new AbortController();
+    readonly controller: AbortController =
+        new AbortController() ?? { signal: null, abort: () =>{} };
     readonly signal: AbortSignal = this.controller.signal;
     readonly request: Promise<Response>;
 
