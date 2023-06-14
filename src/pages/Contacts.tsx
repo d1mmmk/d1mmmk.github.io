@@ -42,9 +42,9 @@ export default class ContactsPage extends Component<ContactsPageProps> {
                 <dd><a
                     className="crop w-max200 d-ib"
                     onClick={() => this.gaEventTracker('hh')}
-                    href="https://hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46"
+                    href="https://hh.ru/resume/06e2d492ff0c0682770039ed1f5945326e6a4a"
                     target="_blank"
-                >hh.ru/resume/e2d2452aff017e98fe0039ed1f696961764a46</a></dd>
+                >hh.ru/resume/06e2d492ff0c0682770039ed1f5945326e6a4a</a></dd>
                 <dt>GitHub</dt>
                 <dd><a
                     onClick={() => this.gaEventTracker('github')}
